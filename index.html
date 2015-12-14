@@ -35,29 +35,44 @@
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Brief Description</h3>
 
 <p>
-	We are going to add surface dynamics to our mesh editor from assignment 2. This will enable us to render realistic 3D animations
-	such as waves etc. We will start off by implementing the Laplace, Heat and Wave equations to simulate the appropriate dynamics,
-	updating vertex positions using the symplectic Euler method. We will then move on to explore more advanced solvers, and possibly 
-	implement different PDEs to simulate different dynamics.
+	For our final project, we added surface dynamics to our mesh editor from assignment 2.
+    Leveraging symplectic and forward Eulerian / discretization methods, and the powerful Laplace-beltrami operator, we added
+	dynamic simulations for the laplace equation, heat equation, wave equation, and mean curvature flow.
 </p>
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true">
-    <span class="octicon octicon-link"></span></a>Implementation Steps
+    <span class="octicon octicon-link"></span></a>Building and running code
 </h3>
 
 <p>
 	<ol>
-		<li>We will first implement the three basic linear equations: the Laplacian, the heat equation, and the wave equation.</li>
-		<li>We will then implement some more advanced solvers. The current plan is to implement the heat equation using
-            backwards Euler, but we may do other things too after reading more carefully through the provided notes.</li>
-		<li>If we have time (or decide to only do one advanced solver), we'll implement some more advanced equations as well.
-            The Bubble Dynamics and Mesh Smoothing look particularly interesting.</li>
+		<li>Run the following command from the root of the project: <br>
+            <span style="font-family:'Lucida Console', monospace">mkdir build && cd build && cmake .. && make</span>
+        </li>
+		<li>From here on you can run the application as you would project 2 <br>
+            <span style="font-family:'Lucida Console', monospace">./meshedit ../dae/collada_file.dae</span></li>
 	</ol>
-	
 </p>
 
-          <p>NOTE: We do not plan on handling boundary conditions in our implementation.</p>
+<p>
+    Once you've loaded the code, you use the following commands to interact with the mesh
+    (first letter is the command -- select a vertex for commands 2 - 8):
+          <ul>
+              <li><b>1</b> - Laplace Equation with <i>Symplectic Euler</i></li>
+              <li><b>2</b> - Laplace Equation with <i>Backward Euler</i></li>
+              <li><b>3</b> - Heat Equation with <i>Symplectic Euler</i></li>
+              <li><b>4</b> - Heat Equation with <i>Backward Euler</i></li>
+              <li><b>5</b> - Wave Equation with <i>Symplectic Euler</i></li>
+              <li><b>6</b> - Wave Equation with <i>Backward Euler</i></li>
+              <li><b>7</b> - Mean Curvature Flow with <i>Symplectic Euler</i></li>
+              <li><b>8</b> - Mean Curvature Flow with <i>Backward Euler</i></li>
+              <li><b>[</b> - Make timestep smaller</li>
+              <li><b>]</b> - Make timestep larger</li>
+              <li><b>a or A</b> - Choose random vertex on mesh and give it a displacement of 3</li>
+      </ul>
+
+</p>
 
       </section>
     </div>
