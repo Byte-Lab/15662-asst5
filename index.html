@@ -79,7 +79,10 @@
 	(command 'u').
 	<br><br>
 	Also note that commands 1 - 8 and command 's' run in a continuous loop when the respective button is pressed. To stop the simulation after starting one of these commands,
-	simply press the respective command button again (e.g. to start a wave simulation, select a vertex and press 5. To stop the simulation, press 5 again).
+	simply press the respective command button again (e.g. to start a wave simulation, select a vertex and press 5. To stop the simulation, press 5 again). 
+	<br><br>
+	The initial displacements for all vertices are 0, but when a vertex is selected and any of the commands 1 - 8 are run, the vertex is given some initial displacement and 
+	then the simulation is run. Note that timestep sizes are critical, so if the mesh seems to blow up, try reducing the timestep.
 </p>
 
 <h3>
@@ -107,7 +110,8 @@
 </h3>
 
 <p>
-	Here are some videos!
+	Here are some videos! Keep in mind that these videos are screen captures of the simulations performed over X11, so the frame rates are lower than would be if one were to 
+	execute the simulations on a local machine.
 </p>
 
       </section>
